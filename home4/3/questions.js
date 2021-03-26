@@ -17,7 +17,7 @@ let questions = {
             question.toString = function () {
                 let str = this.question + '\n';
                 for (let index = 0; index < this.answers.length; index++) {
-                    str += (index + 1)+ '. ' + answers[index] + '\n';
+                    str += (index + 1)+ '. ' + this.answers[index] + '\n';
                     
                 }
                 return str;
