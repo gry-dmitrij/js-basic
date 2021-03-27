@@ -17,17 +17,22 @@ let questions = {
         this.list.length = 0;
         // создаем массив объектов с вопросами
         questionNums.forEach(element => {
+            // получаем вопрос от эмулятора сервера
             let question = questionList.getQuestion(element);
-            question.toString = function () {
-                let str = this.question + '\n';
-                for (let index = 0; index < this.answers.length; index++) {
-                    str += (index + 1)+ '. ' + this.answers[index] + '\n';
-                    
-                }
-                return str;
-            }
+            // добавляем метод вывода 
+            question.toString = this.toString;
+            // добавляем в массив вопросов
             this.list.push(question);
         });
+    },
+
+    toString(){
+        let str = this.question + '\n';
+        for (let index = 0; index < this.answers.length; index++) {
+            str += (index + 1)+ '. ' + this.answers[index] + '\n';
+            
+        }
+        return str;
     },
 
     /**
