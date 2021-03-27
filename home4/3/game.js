@@ -26,7 +26,8 @@ let game = {
 
     ask(step) {
         const question = questions.list[step];
-        let num = +prompt(question.toString());
+        let num = +prompt('Ваш текущий выигрыш: ' + count.sum + '\n'
+            + question.toString());
         if (!Number.isInteger(num)) {
             return null;
         }

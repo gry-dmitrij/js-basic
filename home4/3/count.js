@@ -12,9 +12,10 @@ let count = {
         for (let index = config.saveSteps.length - 1; index >= 0; index--) {
             const minStep = config.saveSteps[index];
             if (this.step >= minStep) {
-                sum = config.sum[minStep];
-                break;
+                this.sum = config.sum[minStep];
+                return;
             }
         }
+        this.sum = 0;
     }
 }
