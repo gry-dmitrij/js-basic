@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>Lorem, ipsum.</b>
+    <b class="sign">Lorem, ipsum.</b>
+    <b class="sign">Lorem, ipsum.</b>
+    <b>Lorem, ipsum.</b>
+
+    <!-- 
+    Задание.
+    1. Получите все теги b.
+    2. С помощью метода contains() из classList, проверьте, есть ли у тега
+    класс sign, и если нет, то тогда добавьте с помощью метода add()
+    -->
+
+    <script>
+        const texts = document.querySelectorAll('b');
+        texts.forEach(element => {
+            if (!element.classList.contains('sign')) {
+                element.classList.add('sign');
+            }
+        });
+        /* Я так понимаю, что в принципе условие здесь лишнее,
+         * потому что если элемент уже содержит этот класс, то он и не 
+         * добавится. Причем мои тесты производительности 
+         * на 3.5 Мб файле (test8.html) показали, что разницы нет - он 
+         * грузится дольше, чем выполняется.
+         *  */
+    </script>
+</body>
+</html>
